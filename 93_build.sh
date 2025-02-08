@@ -2,7 +2,7 @@
 
 set -e -v
 cd $(dirname $0)
-config_file="config_yolo11.yaml"
+config_file="config.yaml"
 model_type="onnx"
 # build model
 hb_mapper makertbin --config ${config_file}  \

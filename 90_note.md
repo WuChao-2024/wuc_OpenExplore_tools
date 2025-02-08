@@ -11,6 +11,9 @@ docker run -it -v /home/chaowu/00_Large_Storage/01_RDK_YOLO/02_YOLOv8/ultralytic
 ```bash
 mkdir -p ~/nj
 sshfs chaowu@10.64.62.34:/home/chaowu/00_large/01_RDK_YOLO/06_YOLO11/ultralytics ~/nj
+
+mkdir -p ~/x5
+sshfs root@10.64.60.202:/ ~/x5
 ```
 
 临时使用阿里pip源

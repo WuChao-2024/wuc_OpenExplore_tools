@@ -1,0 +1,27 @@
+model_parameters:
+  onnx_model: 'JustSoftmax.onnx'
+  march: "bayes-e"
+  layer_out_dump: False
+  working_dir: 'JustSoftmax'
+  output_model_file_prefix: 'JustSoftmax'
+  # YOLO11 n, s, m
+  node_info: {"/Softmax": {'ON': 'BPU','InputType': 'int16','OutputType': 'int16'}}
+  # YOLO11 l, x
+  # node_info: {"/model.10/m/m.0/attn/Softmax": {'ON': 'BPU','InputType': 'int16','OutputType': 'int16'},
+  #             "/model.10/m/m.1/attn/Softmax": {'ON': 'BPU','InputType': 'int16','OutputType': 'int16'}}
+input_parameters:
+  # input_batch: 8
+  input_name: ""
+  input_type_rt: 'featuremap'
+  input_layout_rt: 'NCHW'
+  input_type_train: 'featuremap'
+  input_layout_train: 'NCHW'
+  norm_type: 'no_process'
+calibration_parameters:
+  calibration_type: 'skip'
+compiler_parameters:
+  # jobs: 8
+  compile_mode: 'latency'
+  debug: True
+  advice: 1
+  optimize_level: 'O3'
